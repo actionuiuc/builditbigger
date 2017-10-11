@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Joke Library</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="missing_joke">Please provide a joke for me to tell!</string>
+    <string name="action_settings">Settings</string>
+</resources>
