@@ -20,6 +20,8 @@ import android.os.AsyncTask;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
+import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
+import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import com.udacity.gradle.backend.myApi.MyApi;
 
 import java.io.IOException;
@@ -32,7 +34,7 @@ public class TellJokeAsyncTask extends AsyncTask<Void, Void, String> {
     protected String doInBackground(Void... params) {
         if(myApiService == null) {  // Only do this once
             //Local Server
-/*                MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
+                MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                         new AndroidJsonFactory(), null)
                         // options for running against local devappserver
                         // - 10.0.2.2 is localhost's IP address in Android emulator
@@ -43,10 +45,10 @@ public class TellJokeAsyncTask extends AsyncTask<Void, Void, String> {
                             public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
                                 abstractGoogleClientRequest.setDisableGZipContent(true);
                             }
-                        });*/
+                        });
             //Deployed Backend
-            MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
-                    .setRootUrl("https://project4-181402.appspot.com/_ah/api/");
+/*            MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
+                    .setRootUrl("https://project4-181402.appspot.com/_ah/api/");*/
 
             // end options for devappserver
 
