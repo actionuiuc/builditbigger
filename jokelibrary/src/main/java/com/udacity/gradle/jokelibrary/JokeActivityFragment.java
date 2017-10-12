@@ -33,12 +33,14 @@ public class JokeActivityFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_joke, container, false);
         Intent intent = getActivity().getIntent();
-        String joke = intent.getStringExtra(JokeActivity.JOKE_KEY);
-        TextView jokeTextView = (TextView) root.findViewById(R.id.joke_textview);
-        if (joke != null && joke.length() != 0) {
-            jokeTextView.setText(joke);
-        }
 
+        if (intent.hasExtra(JokeActivity.JOKE_KEY)) {
+            String joke = intent.getStringExtra(JokeActivity.JOKE_KEY);
+            TextView jokeTextView = (TextView) root.findViewById(R.id.joke_textview);
+            if (joke != null && joke.length() != 0) {
+                jokeTextView.setText(joke);
+            }
+        }
 
         // Inflate the layout for this fragment
         return root;
